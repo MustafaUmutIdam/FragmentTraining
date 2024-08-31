@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/mainPageFragment">
+
+    <fragment
+        android:id="@+id/mainPageFragment"
+        android:name="com.example.fragmenttraining.MainPageFragment"
+        android:label="fragment_main_page"
+        tools:layout="@layout/fragment_main_page" >
+        <action
+            android:id="@+id/mainToA"
+            app:destination="@id/pageAFragment" />
+        <action
+            android:id="@+id/mainToBottom"
+            app:destination="@id/pageBottomFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pageAFragment"
+        android:name="com.example.fragmenttraining.PageAFragment"
+        android:label="fragment_page_a"
+        tools:layout="@layout/fragment_page_a" >
+        <action
+            android:id="@+id/aToB"
+            app:destination="@id/pageBFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pageBFragment"
+        android:name="com.example.fragmenttraining.PageBFragment"
+        android:label="fragment_page_b"
+        tools:layout="@layout/fragment_page_b" >
+        <action
+            android:id="@+id/bToLast"
+            app:destination="@id/pageLastFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pageBottomFragment"
+        android:name="com.example.fragmenttraining.PageBottomFragment"
+        android:label="fragment_page_bottom"
+        tools:layout="@layout/fragment_page_bottom" >
+        <action
+            android:id="@+id/bottomToLast"
+            app:destination="@id/pageLastFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pageLastFragment"
+        android:name="com.example.fragmenttraining.PageLastFragment"
+        android:label="fragment_page_last"
+        tools:layout="@layout/fragment_page_last" >
+        <action
+            android:id="@+id/lastToMain"
+            app:destination="@id/mainPageFragment" />
+    </fragment>
+</navigation>
